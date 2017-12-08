@@ -185,13 +185,9 @@ namespace Utilities
 
 					bool bTest = SteamFriends.InviteUserToGame(FriendID, strConnectString);
 					if (bTest)
-					{
 						return "Invite sent with specified launch parameters.\n";
-					}
 					else
-					{
 						return "Failed to send invite with specified launch parameters.\n";
-					}
 				}
 			}
 			return "Failed to find friend, ensure you have them added, and you're supplying the correct name.\n";
