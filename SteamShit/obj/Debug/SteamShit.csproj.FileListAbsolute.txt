@@ -1,0 +1,10 @@
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\bin\Debug\SteamShit.exe.config
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\bin\Debug\SteamShit.exe
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\bin\Debug\SteamShit.pdb
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\bin\Debug\Steamworks.NET.dll
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.exe
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.pdb
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.csprojResolveAssemblyReference.cache
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.Main.Console.resources
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.Main.MainForm.resources
+c:\users\insol\documents\visual studio 2017\Projects\SteamShit\SteamShit\obj\Debug\SteamShit.csproj.GenerateResource.Cache
