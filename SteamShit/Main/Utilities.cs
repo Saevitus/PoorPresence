@@ -74,14 +74,12 @@ namespace Utilities
 		public static string SetName(string strName)
 		{
 			SteamFriends.SetPersonaName(strName);
-
 			return string.Format("Set name to: {0}\n", strName);
 		}
 
 		public static string GetSteamLevel()
 		{
 			int iSteamLevel = SteamUser.GetPlayerSteamLevel();
-
 			return string.Format("Steam Level: {0}\n", iSteamLevel);
 		}
 
@@ -173,7 +171,6 @@ namespace Utilities
 		public static string FakeInvite(string strTargetName, string strConnectString)
 		{
 			int iFriendCount = SteamFriends.GetFriendCount(EFriendFlags.k_EFriendFlagImmediate);
-			int iClanCount = SteamFriends.GetClanCount();
 
 			for (int a = 0; a < iFriendCount; a++)
 			{
