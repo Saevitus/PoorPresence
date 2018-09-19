@@ -120,6 +120,7 @@ namespace Utilities
 			SteamFriends.SetRichPresence("game:map", "random");
 			SteamFriends.SetRichPresence("game:score", strScore);
 			SteamFriends.SetRichPresence("game:server", "competitive");
+			SteamFriends.SetRichPresence("steam_display", "#display_GameKnownMapScore");
 
 			return string.Format("Setting status to: {0}\nSetting score to: {1}\n", strStatus, strScore);
 		}
