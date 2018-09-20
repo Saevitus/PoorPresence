@@ -1,4 +1,4 @@
-﻿namespace SteamShit.Main
+namespace SteamShit.Main
 {
 	partial class MainForm
 	{
@@ -38,6 +38,11 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.UnlockAllAchievements = new System.Windows.Forms.Button();
 			this.LockAllAchievements = new System.Windows.Forms.Button();
+			this.UnlockSetAchievements = new System.Windows.Forms.Button();
+			this.NumOfAchievements = new System.Windows.Forms.TextBox();
+			this.RichButton = new System.Windows.Forms.Button();
+			this.StatusInput = new System.Windows.Forms.TextBox();
+			this.ScoreInput = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// AcceptButton
@@ -125,11 +130,61 @@
 			this.LockAllAchievements.UseVisualStyleBackColor = true;
 			this.LockAllAchievements.Click += new System.EventHandler(this.LockAllAchievements_Click);
 			// 
+			// UnlockSetAchievements
+			// 
+			this.UnlockSetAchievements.Location = new System.Drawing.Point(4, 150);
+			this.UnlockSetAchievements.Name = "UnlockSetAchievements";
+			this.UnlockSetAchievements.Size = new System.Drawing.Size(132, 44);
+			this.UnlockSetAchievements.TabIndex = 11;
+			this.UnlockSetAchievements.Text = "Unlock Num Achievements";
+			this.UnlockSetAchievements.UseVisualStyleBackColor = true;
+			this.UnlockSetAchievements.Click += new System.EventHandler(this.UnlockSetAchievements_Click);
+			// 
+			// NumOfAchievements
+			// 
+			this.NumOfAchievements.Location = new System.Drawing.Point(4, 200);
+			this.NumOfAchievements.Name = "NumOfAchievements";
+			this.NumOfAchievements.Size = new System.Drawing.Size(132, 20);
+			this.NumOfAchievements.TabIndex = 12;
+			// 
+			// RichButton
+			// 
+			this.RichButton.Location = new System.Drawing.Point(276, 4);
+			this.RichButton.Name = "RichButton";
+			this.RichButton.Size = new System.Drawing.Size(132, 44);
+			this.RichButton.TabIndex = 13;
+			this.RichButton.Text = "Set Rich Presence";
+			this.RichButton.UseVisualStyleBackColor = true;
+			this.RichButton.Click += new System.EventHandler(this.RichButton_Click);
+			// 
+			// StatusInput
+			// 
+			this.StatusInput.Location = new System.Drawing.Point(276, 52);
+			this.StatusInput.Name = "StatusInput";
+			this.StatusInput.Size = new System.Drawing.Size(132, 20);
+			this.StatusInput.TabIndex = 14;
+			this.StatusInput.Text = "Status";
+			this.StatusInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// ScoreInput
+			// 
+			this.ScoreInput.Location = new System.Drawing.Point(276, 76);
+			this.ScoreInput.Name = "ScoreInput";
+			this.ScoreInput.Size = new System.Drawing.Size(132, 20);
+			this.ScoreInput.TabIndex = 15;
+			this.ScoreInput.Text = "Score";
+			this.ScoreInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(642, 362);
+			this.Controls.Add(this.ScoreInput);
+			this.Controls.Add(this.StatusInput);
+			this.Controls.Add(this.RichButton);
+			this.Controls.Add(this.NumOfAchievements);
+			this.Controls.Add(this.UnlockSetAchievements);
 			this.Controls.Add(this.LockAllAchievements);
 			this.Controls.Add(this.UnlockAllAchievements);
 			this.Controls.Add(this.label1);
@@ -158,5 +213,10 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button UnlockAllAchievements;
 		private System.Windows.Forms.Button LockAllAchievements;
+		private System.Windows.Forms.Button UnlockSetAchievements;
+		private System.Windows.Forms.TextBox NumOfAchievements;
+		private System.Windows.Forms.Button RichButton;
+		private System.Windows.Forms.TextBox StatusInput;
+		private System.Windows.Forms.TextBox ScoreInput;
 	}
 }
