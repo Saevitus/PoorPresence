@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Windows.Forms;
 using Utilities;
@@ -131,6 +131,38 @@ namespace SteamShit.Main
 			}
 
 			m_gConsole.MainConsole.AppendText(CMemeworks.ClearAllAchievements());
+		}
+
+		private void UnlockSetAchievements_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				int iNum = Int32.Parse(NumOfAchievements.Text);
+
+				if (!m_gbIsSteamInitiated)
+				{
+					m_gConsole.MainConsole.AppendText("Steam API is not initiated, please input an AppID into the supplied text box.\n");
+					return;
+				}
+
+				m_gConsole.MainConsole.AppendText(CMemeworks.SetAchievementAmount(iNum));
+			}
+			catch (FormatException exc)
+			{
+				//string strText = string.Format(exc.Message + "n");
+				m_gConsole.MainConsole.AppendText(exc.Message + "\n");
+			}
+		}
+
+		private void RichButton_Click(object sender, EventArgs e)
+		{
+			if (!m_gbIsSteamInitiated)
+			{
+				m_gConsole.MainConsole.AppendText("Steam API is not initiated, please input an AppID into the supplied text box.\n");
+				return;
+			}
+
+			m_gConsole.MainConsole.AppendText(CMemeworks.SetPoorPresence(StatusInput.Text, ScoreInput.Text));
 		}
 	}
 
