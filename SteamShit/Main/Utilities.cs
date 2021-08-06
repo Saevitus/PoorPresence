@@ -136,6 +136,20 @@ namespace Utilities
 				Console.Write("  {0}{1}", strName, Environment.NewLine);
 			}
 		}
+		
+		public static string SetAchievementAmount(int iNum)
+		{
+			for (uint i = 0; i < iNum; i++)
+			{
+				string strAchievement = SteamUserStats.GetAchievementName(i);
+				SteamUserStats.SetAchievement(strAchievement);
+			}
+			if (SteamUserStats.StoreStats())
+			{
+				return string.Format("Successfully unlocked {0} Achievement(s)!\n", iNum);
+			}
+			return "Failed to unlock achievements.\n";
+		}
 
 		public static string GetAllAchievements()
 		{
