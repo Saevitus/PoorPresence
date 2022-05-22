@@ -15,7 +15,7 @@ namespace Utilities
 	{
 		// initializes steam api
 		public static bool Initiated() { return SteamAPI.Init(); }
-		
+
 		public static void Shutdown() { SteamAPI.Shutdown(); }
 
 		public static string RequestUserStats()
@@ -109,18 +109,25 @@ namespace Utilities
 			 * while he was reverse engineering csgo,
 			 * I'm sure if there is a game that has functionality like this, you could RE
 			 * it and locate the required information to change it.
+			 * 
+			 * I HAVE MODIFIED THIS, IT NOW JUST SETS TO "Score" INSTEAD OF THE COMPETITIVE RANDOM
 			 */
 
 			// this is the "status" you can view when you rightclick
 			// a user in your steam friends and view their game info
+			SteamFriends.ClearRichPresence();
 			SteamFriends.SetRichPresence("status", strStatus);
+			/*
 			SteamFriends.SetRichPresence("game:act", "offline");
 			SteamFriends.SetRichPresence("game:mode", "competitive");
 			SteamFriends.SetRichPresence("game:mapgroupname", "mg_active");
-			SteamFriends.SetRichPresence("game:map", "random");
-			SteamFriends.SetRichPresence("game:score", strScore);
-			SteamFriends.SetRichPresence("game:server", "competitive");
-			SteamFriends.SetRichPresence("steam_display", "#display_GameKnownMapScore");
+			SteamFriends.SetRichPresence("game:map", "de_dust2");
+			SteamFriends.SetRichPresence("game:score", strScore); 
+			*/
+			SteamFriends.SetRichPresence("score", strScore);
+			//SteamFriends.SetRichPresence("game:server", "competitive");
+			SteamFriends.SetRichPresence("steam_display", "#playing_game");
+			//SteamFriends.SetRichPresence("steam_display", "#StatusWithScore");
 
 			return string.Format("Setting status to: {0}\nSetting score to: {1}\n", strStatus, strScore);
 		}
@@ -136,7 +143,7 @@ namespace Utilities
 				Console.Write("  {0}{1}", strName, Environment.NewLine);
 			}
 		}
-		
+
 		public static string SetAchievementAmount(int iNum)
 		{
 			for (uint i = 0; i < iNum; i++)
