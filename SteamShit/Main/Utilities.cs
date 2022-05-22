@@ -126,7 +126,7 @@ namespace Utilities
 			*/
 			SteamFriends.SetRichPresence("score", strScore);
 			//SteamFriends.SetRichPresence("game:server", "competitive");
-			SteamFriends.SetRichPresence("steam_display", "#playing_game");
+			SteamFriends.SetRichPresence("steam_display", "#bcast_score");
 			//SteamFriends.SetRichPresence("steam_display", "#StatusWithScore");
 
 			return string.Format("Setting status to: {0}\nSetting score to: {1}\n", strStatus, strScore);
