@@ -1,4 +1,6 @@
 # PoorPresence - Formerly CS-Steamworks
+## NOW USING .NET 6.0 - old branch has been saved and locked as master if anyone wants it.
+
 
 Just a meme program using steamworks, includes basic functionalities, setting rich presence, unlocking achievements, fake invites, etc. I've now added discord rich presence to it as well.
 For discord, you can set the details, state, large & small image along with a timestamp (currently hardcoded to show your local time).
