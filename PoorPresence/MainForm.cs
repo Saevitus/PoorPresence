@@ -189,8 +189,8 @@ namespace PoorPresence
             {
                 details = RPDetailsText.Text,
                 state = RPStateText.Text,
-                largeImage = "https://i.imgur.com/lmC5YxX.png",
-                smallImage = "https://cdn.discordapp.com/emojis/860194680485707831.gif",
+                largeImage = RPLargeImageText.Text,
+                smallImage = RPSmallImageText.Text,
                 // no setting for changing this rn, bc is there really any need
                 timestamp = DateTime.UtcNow.Subtract(new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second))
             };

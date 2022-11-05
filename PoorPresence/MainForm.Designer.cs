@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AcceptButton = new System.Windows.Forms.Button();
             this.GetAccountInfo = new System.Windows.Forms.Button();
             this.SteamAppID = new System.Windows.Forms.TextBox();
@@ -54,10 +53,11 @@
             // 
             // AcceptButton
             // 
-            this.AcceptButton.Location = new System.Drawing.Point(4, 4);
+            this.AcceptButton.Location = new System.Drawing.Point(5, 5);
+            this.AcceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AcceptButton.Name = "AcceptButton";
             this.AcceptButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.AcceptButton.Size = new System.Drawing.Size(72, 44);
+            this.AcceptButton.Size = new System.Drawing.Size(84, 51);
             this.AcceptButton.TabIndex = 1;
             this.AcceptButton.Text = "Accept";
             this.AcceptButton.UseVisualStyleBackColor = true;
@@ -65,9 +65,10 @@
             // 
             // GetAccountInfo
             // 
-            this.GetAccountInfo.Location = new System.Drawing.Point(4, 52);
+            this.GetAccountInfo.Location = new System.Drawing.Point(5, 60);
+            this.GetAccountInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GetAccountInfo.Name = "GetAccountInfo";
-            this.GetAccountInfo.Size = new System.Drawing.Size(132, 44);
+            this.GetAccountInfo.Size = new System.Drawing.Size(154, 51);
             this.GetAccountInfo.TabIndex = 2;
             this.GetAccountInfo.Text = "Get Account Info";
             this.GetAccountInfo.UseVisualStyleBackColor = true;
@@ -75,17 +76,19 @@
             // 
             // SteamAppID
             // 
-            this.SteamAppID.Location = new System.Drawing.Point(80, 24);
+            this.SteamAppID.Location = new System.Drawing.Point(93, 28);
+            this.SteamAppID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SteamAppID.Name = "SteamAppID";
-            this.SteamAppID.Size = new System.Drawing.Size(56, 20);
+            this.SteamAppID.Size = new System.Drawing.Size(65, 23);
             this.SteamAppID.TabIndex = 8;
             this.SteamAppID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InviteButton
             // 
-            this.InviteButton.Location = new System.Drawing.Point(140, 4);
+            this.InviteButton.Location = new System.Drawing.Point(163, 5);
+            this.InviteButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.InviteButton.Name = "InviteButton";
-            this.InviteButton.Size = new System.Drawing.Size(132, 44);
+            this.InviteButton.Size = new System.Drawing.Size(154, 51);
             this.InviteButton.TabIndex = 5;
             this.InviteButton.Text = "Fake Invite";
             this.InviteButton.UseVisualStyleBackColor = true;
@@ -93,35 +96,39 @@
             // 
             // TargetInput
             // 
-            this.TargetInput.Location = new System.Drawing.Point(140, 52);
+            this.TargetInput.Location = new System.Drawing.Point(163, 60);
+            this.TargetInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TargetInput.Name = "TargetInput";
-            this.TargetInput.Size = new System.Drawing.Size(132, 20);
+            this.TargetInput.Size = new System.Drawing.Size(153, 23);
             this.TargetInput.TabIndex = 6;
             this.TargetInput.Text = "Target Name";
             this.TargetInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ConnectInput
             // 
-            this.ConnectInput.Location = new System.Drawing.Point(140, 76);
+            this.ConnectInput.Location = new System.Drawing.Point(163, 88);
+            this.ConnectInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ConnectInput.Name = "ConnectInput";
-            this.ConnectInput.Size = new System.Drawing.Size(132, 20);
+            this.ConnectInput.Size = new System.Drawing.Size(153, 23);
             this.ConnectInput.TabIndex = 7;
             this.ConnectInput.Text = "Connect String";
             this.ConnectInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(80, 8);
+            this.label1.Location = new System.Drawing.Point(93, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(65, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Set AppID";
             // 
             // UnlockAllAchievements
             // 
-            this.UnlockAllAchievements.Location = new System.Drawing.Point(4, 100);
+            this.UnlockAllAchievements.Location = new System.Drawing.Point(5, 115);
+            this.UnlockAllAchievements.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UnlockAllAchievements.Name = "UnlockAllAchievements";
-            this.UnlockAllAchievements.Size = new System.Drawing.Size(132, 44);
+            this.UnlockAllAchievements.Size = new System.Drawing.Size(154, 51);
             this.UnlockAllAchievements.TabIndex = 9;
             this.UnlockAllAchievements.Text = "Get All Achievements";
             this.UnlockAllAchievements.UseVisualStyleBackColor = true;
@@ -129,9 +136,10 @@
             // 
             // LockAllAchievements
             // 
-            this.LockAllAchievements.Location = new System.Drawing.Point(140, 100);
+            this.LockAllAchievements.Location = new System.Drawing.Point(163, 115);
+            this.LockAllAchievements.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LockAllAchievements.Name = "LockAllAchievements";
-            this.LockAllAchievements.Size = new System.Drawing.Size(132, 44);
+            this.LockAllAchievements.Size = new System.Drawing.Size(154, 51);
             this.LockAllAchievements.TabIndex = 10;
             this.LockAllAchievements.Text = "Clear All Achievements";
             this.LockAllAchievements.UseVisualStyleBackColor = true;
@@ -139,9 +147,10 @@
             // 
             // UnlockSetAchievements
             // 
-            this.UnlockSetAchievements.Location = new System.Drawing.Point(4, 150);
+            this.UnlockSetAchievements.Location = new System.Drawing.Point(5, 173);
+            this.UnlockSetAchievements.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.UnlockSetAchievements.Name = "UnlockSetAchievements";
-            this.UnlockSetAchievements.Size = new System.Drawing.Size(132, 44);
+            this.UnlockSetAchievements.Size = new System.Drawing.Size(154, 51);
             this.UnlockSetAchievements.TabIndex = 11;
             this.UnlockSetAchievements.Text = "Unlock Num Achievements";
             this.UnlockSetAchievements.UseVisualStyleBackColor = true;
@@ -149,16 +158,18 @@
             // 
             // NumOfAchievements
             // 
-            this.NumOfAchievements.Location = new System.Drawing.Point(4, 200);
+            this.NumOfAchievements.Location = new System.Drawing.Point(5, 231);
+            this.NumOfAchievements.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.NumOfAchievements.Name = "NumOfAchievements";
-            this.NumOfAchievements.Size = new System.Drawing.Size(132, 20);
+            this.NumOfAchievements.Size = new System.Drawing.Size(153, 23);
             this.NumOfAchievements.TabIndex = 12;
             // 
             // RichButton
             // 
-            this.RichButton.Location = new System.Drawing.Point(276, 4);
+            this.RichButton.Location = new System.Drawing.Point(322, 5);
+            this.RichButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RichButton.Name = "RichButton";
-            this.RichButton.Size = new System.Drawing.Size(132, 44);
+            this.RichButton.Size = new System.Drawing.Size(154, 51);
             this.RichButton.TabIndex = 13;
             this.RichButton.Text = "Set Steam Rich Presence";
             this.RichButton.UseVisualStyleBackColor = true;
@@ -166,27 +177,30 @@
             // 
             // StatusInput
             // 
-            this.StatusInput.Location = new System.Drawing.Point(276, 52);
+            this.StatusInput.Location = new System.Drawing.Point(322, 60);
+            this.StatusInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.StatusInput.Name = "StatusInput";
-            this.StatusInput.Size = new System.Drawing.Size(132, 20);
+            this.StatusInput.Size = new System.Drawing.Size(153, 23);
             this.StatusInput.TabIndex = 14;
             this.StatusInput.Text = "Status";
             this.StatusInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ScoreInput
             // 
-            this.ScoreInput.Location = new System.Drawing.Point(276, 76);
+            this.ScoreInput.Location = new System.Drawing.Point(322, 88);
+            this.ScoreInput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ScoreInput.Name = "ScoreInput";
-            this.ScoreInput.Size = new System.Drawing.Size(132, 20);
+            this.ScoreInput.Size = new System.Drawing.Size(153, 23);
             this.ScoreInput.TabIndex = 15;
             this.ScoreInput.Text = "Score";
             this.ScoreInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DiscordRPCButton
             // 
-            this.DiscordRPCButton.Location = new System.Drawing.Point(507, 4);
+            this.DiscordRPCButton.Location = new System.Drawing.Point(592, 5);
+            this.DiscordRPCButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DiscordRPCButton.Name = "DiscordRPCButton";
-            this.DiscordRPCButton.Size = new System.Drawing.Size(132, 44);
+            this.DiscordRPCButton.Size = new System.Drawing.Size(154, 51);
             this.DiscordRPCButton.TabIndex = 16;
             this.DiscordRPCButton.Text = "Initialize Discord Rich Presence";
             this.DiscordRPCButton.UseVisualStyleBackColor = true;
@@ -194,18 +208,20 @@
             // 
             // DiscordAppID
             // 
-            this.DiscordAppID.Location = new System.Drawing.Point(507, 54);
+            this.DiscordAppID.Location = new System.Drawing.Point(592, 62);
+            this.DiscordAppID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DiscordAppID.Name = "DiscordAppID";
-            this.DiscordAppID.Size = new System.Drawing.Size(132, 20);
+            this.DiscordAppID.Size = new System.Drawing.Size(153, 23);
             this.DiscordAppID.TabIndex = 17;
-            this.DiscordAppID.Text = "1038019624463249448";
+            this.DiscordAppID.Text = "AppID";
             this.DiscordAppID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SetDCRP
             // 
-            this.SetDCRP.Location = new System.Drawing.Point(507, 80);
+            this.SetDCRP.Location = new System.Drawing.Point(592, 92);
+            this.SetDCRP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SetDCRP.Name = "SetDCRP";
-            this.SetDCRP.Size = new System.Drawing.Size(132, 44);
+            this.SetDCRP.Size = new System.Drawing.Size(154, 51);
             this.SetDCRP.TabIndex = 18;
             this.SetDCRP.Text = "Set Rich Presence";
             this.SetDCRP.UseVisualStyleBackColor = true;
@@ -213,45 +229,49 @@
             // 
             // RPLargeImageText
             // 
-            this.RPLargeImageText.Location = new System.Drawing.Point(507, 182);
+            this.RPLargeImageText.Location = new System.Drawing.Point(592, 210);
+            this.RPLargeImageText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RPLargeImageText.Name = "RPLargeImageText";
-            this.RPLargeImageText.Size = new System.Drawing.Size(132, 20);
+            this.RPLargeImageText.Size = new System.Drawing.Size(153, 23);
             this.RPLargeImageText.TabIndex = 19;
             this.RPLargeImageText.Text = "Large Image";
             this.RPLargeImageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RPSmallImageText
             // 
-            this.RPSmallImageText.Location = new System.Drawing.Point(507, 208);
+            this.RPSmallImageText.Location = new System.Drawing.Point(592, 240);
+            this.RPSmallImageText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RPSmallImageText.Name = "RPSmallImageText";
-            this.RPSmallImageText.Size = new System.Drawing.Size(132, 20);
+            this.RPSmallImageText.Size = new System.Drawing.Size(153, 23);
             this.RPSmallImageText.TabIndex = 20;
             this.RPSmallImageText.Text = "Small Image";
             this.RPSmallImageText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RPStateText
             // 
-            this.RPStateText.Location = new System.Drawing.Point(507, 156);
+            this.RPStateText.Location = new System.Drawing.Point(592, 180);
+            this.RPStateText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RPStateText.Name = "RPStateText";
-            this.RPStateText.Size = new System.Drawing.Size(132, 20);
+            this.RPStateText.Size = new System.Drawing.Size(153, 23);
             this.RPStateText.TabIndex = 21;
             this.RPStateText.Text = "State";
             this.RPStateText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RPDetailsText
             // 
-            this.RPDetailsText.Location = new System.Drawing.Point(507, 130);
+            this.RPDetailsText.Location = new System.Drawing.Point(592, 150);
+            this.RPDetailsText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RPDetailsText.Name = "RPDetailsText";
-            this.RPDetailsText.Size = new System.Drawing.Size(132, 20);
+            this.RPDetailsText.Size = new System.Drawing.Size(153, 23);
             this.RPDetailsText.TabIndex = 22;
             this.RPDetailsText.Text = "Details";
             this.RPDetailsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 362);
+            this.ClientSize = new System.Drawing.Size(749, 418);
             this.Controls.Add(this.RPDetailsText);
             this.Controls.Add(this.RPStateText);
             this.Controls.Add(this.RPSmallImageText);
@@ -274,7 +294,7 @@
             this.Controls.Add(this.GetAccountInfo);
             this.Controls.Add(this.AcceptButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.Text = "SteamShit";
             this.ResumeLayout(false);
