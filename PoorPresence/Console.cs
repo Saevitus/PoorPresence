@@ -1,16 +1,11 @@
-﻿using System;
-using System.Security.Cryptography;
-using System.Windows.Forms;
-using Utilities;
-
-namespace PoorPresence
+﻿namespace PoorPresence
 {
-	public partial class Console : Form
-	{
+    public partial class Console : Form
+    {
         public Console(MainForm Form)
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
         // print function that checks if it's being called from an outside thread,
         // if it is an invoke is required, and we use the MethodInvoker delegate
@@ -26,7 +21,8 @@ namespace PoorPresence
                 return;
             }
 
-            MainConsole.Invoke((MethodInvoker)delegate {
+            MainConsole.Invoke((MethodInvoker)delegate
+            {
                 MainConsole.AppendText(str);
             });
         }
