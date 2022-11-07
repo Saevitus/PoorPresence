@@ -49,6 +49,10 @@
             this.RPSmallImageText = new System.Windows.Forms.TextBox();
             this.RPStateText = new System.Windows.Forms.TextBox();
             this.RPDetailsText = new System.Windows.Forms.TextBox();
+            this.saveCfg = new System.Windows.Forms.Button();
+            this.loadCfg = new System.Windows.Forms.Button();
+            this.clearCfg = new System.Windows.Forms.Button();
+            this.timestampToggle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AcceptButton
@@ -267,11 +271,59 @@
             this.RPDetailsText.Text = "Details";
             this.RPDetailsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // saveCfg
+            // 
+            this.saveCfg.Location = new System.Drawing.Point(5, 355);
+            this.saveCfg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.saveCfg.Name = "saveCfg";
+            this.saveCfg.Size = new System.Drawing.Size(154, 51);
+            this.saveCfg.TabIndex = 23;
+            this.saveCfg.Text = "Save Default Config";
+            this.saveCfg.UseVisualStyleBackColor = true;
+            this.saveCfg.Click += new System.EventHandler(this.saveCfg_Click);
+            // 
+            // loadCfg
+            // 
+            this.loadCfg.Location = new System.Drawing.Point(167, 355);
+            this.loadCfg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.loadCfg.Name = "loadCfg";
+            this.loadCfg.Size = new System.Drawing.Size(154, 51);
+            this.loadCfg.TabIndex = 24;
+            this.loadCfg.Text = "Load Config";
+            this.loadCfg.UseVisualStyleBackColor = true;
+            this.loadCfg.Click += new System.EventHandler(this.loadCfg_Click);
+            // 
+            // clearCfg
+            // 
+            this.clearCfg.Location = new System.Drawing.Point(329, 355);
+            this.clearCfg.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.clearCfg.Name = "clearCfg";
+            this.clearCfg.Size = new System.Drawing.Size(154, 51);
+            this.clearCfg.TabIndex = 25;
+            this.clearCfg.Text = "Clear Config";
+            this.clearCfg.UseVisualStyleBackColor = true;
+            this.clearCfg.Click += new System.EventHandler(this.clearCfg_Click);
+            // 
+            // timestampToggle
+            // 
+            this.timestampToggle.Location = new System.Drawing.Point(592, 269);
+            this.timestampToggle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.timestampToggle.Name = "timestampToggle";
+            this.timestampToggle.Size = new System.Drawing.Size(154, 51);
+            this.timestampToggle.TabIndex = 26;
+            this.timestampToggle.Text = "Toggle Timestamp";
+            this.timestampToggle.UseVisualStyleBackColor = true;
+            this.timestampToggle.Click += new System.EventHandler(this.timestampToggle_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 418);
+            this.Controls.Add(this.timestampToggle);
+            this.Controls.Add(this.clearCfg);
+            this.Controls.Add(this.loadCfg);
+            this.Controls.Add(this.saveCfg);
             this.Controls.Add(this.RPDetailsText);
             this.Controls.Add(this.RPStateText);
             this.Controls.Add(this.RPSmallImageText);
@@ -296,7 +348,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
-            this.Text = "SteamShit";
+            this.Text = "PoorPresence";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +376,9 @@
         private System.Windows.Forms.TextBox RPSmallImageText;
         private System.Windows.Forms.TextBox RPStateText;
         private System.Windows.Forms.TextBox RPDetailsText;
+        private Button saveCfg;
+        private Button loadCfg;
+        private Button clearCfg;
+        private Button timestampToggle;
     }
 }

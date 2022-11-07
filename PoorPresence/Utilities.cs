@@ -1,6 +1,7 @@
 ﻿using DiscordRPC;
 using PoorPresence;
 using Steamworks;
+using System;
 using System.Text;
 
 namespace Utilities
@@ -156,6 +157,7 @@ namespace Utilities
 			m_gForm!.m_gConsole!.Print(string.Format("Setting status to: {0}\nSetting score to: {1}\n", strStatus, strScore));
 		}
 
+		// unused, but can be implemented, was just a test function to get the specific IDs for each achievement
 		public void GetAchievementIDs()
 		{
 			uint iAchievements = SteamUserStats.GetNumAchievements();
@@ -168,6 +170,7 @@ namespace Utilities
 			}
 		}
 
+		// loop for the input numbe, we get the name of each achievement then use SetAchievement to unlock them
 		public void SetAchievementAmount(int iNum)
 		{
 			for (uint i = 0; i < iNum; i++)
@@ -175,13 +178,17 @@ namespace Utilities
 				string strAchievement = SteamUserStats.GetAchievementName(i);
 				SteamUserStats.SetAchievement(strAchievement);
 			}
-			if (SteamUserStats.StoreStats())
+			// we call StoreStats, it returns true or false if it succeeds or fails, straight forward
+			if (!SteamUserStats.StoreStats())
 			{
-				m_gForm!.m_gConsole!.Print(string.Format("Successfully unlocked {0} Achievement(s)!\n", iNum));
+                m_gForm!.m_gConsole!.Print("Failed to unlock achievements.\n");
+				return;
 			}
-			m_gForm!.m_gConsole!.Print("Failed to unlock achievements.\n");
-		}
 
+            m_gForm!.m_gConsole!.Print(string.Format("Successfully unlocked {0} Achievement(s)!\n", iNum));
+        }
+
+		// does the same as above, but just unlocks everything using GetNumAchievements as the number for the for loop
 		public void GetAllAchievements()
 		{
 			uint iAchievements = SteamUserStats.GetNumAchievements();
@@ -191,13 +198,17 @@ namespace Utilities
 				string strAchievement = SteamUserStats.GetAchievementName(i);
 				SteamUserStats.SetAchievement(strAchievement);
 			}
-			if (SteamUserStats.StoreStats())
-			{
-				m_gForm!.m_gConsole!.Print(string.Format("Successfully unlocked {0} Achievement(s)!\n", iAchievements));
-			}
-			m_gForm!.m_gConsole!.Print("Failed to unlock achievements.\n");
-		}
 
+            if (!SteamUserStats.StoreStats())
+            {
+                m_gForm!.m_gConsole!.Print("Failed to unlock achievements.\n");
+				return;
+			}
+
+            m_gForm!.m_gConsole!.Print(string.Format("Successfully unlocked {0} Achievement(s)!\n", iAchievements));
+        }
+
+		// yet again, basically the same as the GetAllAchievements func, except we call ClearAchievement instead.
 		public void ClearAllAchievements()
 		{
 			uint iAchievements = SteamUserStats.GetNumAchievements();
@@ -207,13 +218,27 @@ namespace Utilities
 				string strAchievement = SteamUserStats.GetAchievementName(i);
 				SteamUserStats.ClearAchievement(strAchievement);
 			}
-			if (SteamUserStats.StoreStats())
-			{
-				m_gForm!.m_gConsole!.Print(string.Format("Successfully cleared {0} Achievement(s)!\n", iAchievements));
-			}
-			m_gForm!.m_gConsole!.Print("Failed to clear achievements.\n");
-		}
 
+			if (!SteamUserStats.StoreStats())
+			{
+                m_gForm!.m_gConsole!.Print("Failed to clear achievements.\n");
+				return;
+			}
+
+            m_gForm!.m_gConsole!.Print(string.Format("Successfully cleared {0} Achievement(s)!\n", iAchievements));
+        }
+
+		/*
+		 * this one is fairly advanced, it was first discovered by Syn, but I've improved on it a fair bit
+		 * we get your friend count, then use that to loop, we then get the steamID of the "victim"
+		 * we get the name of the "victim" out of the steamid, then check it against our input name
+		 * to make sure we've got the right person.
+		 * 
+		 * then we grab the state of the friend anc check to make sure they're not offline or on snooze
+		 * a simple call of InviteUserToGame, we supply their steamid and the connect string
+		 * I'm not gonna lie, I can't remember what to do with the connect string, I'll do some digging and update this
+		 * at a later point
+		 */
 		public void FakeInvite(string strTargetName, string strConnectString)
 		{
 			int iFriendCount = SteamFriends.GetFriendCount(EFriendFlags.k_EFriendFlagImmediate);
@@ -230,78 +255,88 @@ namespace Utilities
 						m_gForm!.m_gConsole!.Print("The specified user was either Offline, or on Snooze.\n");
 
 					bool bTest = SteamFriends.InviteUserToGame(FriendID, strConnectString);
-					if (bTest)
-						m_gForm!.m_gConsole!.Print("Invite sent with specified launch parameters.\n");
-					else
-						m_gForm!.m_gConsole!.Print("Failed to send invite with specified launch parameters.\n");
+					if (!bTest)
+					{
+                        m_gForm!.m_gConsole!.Print("Failed to send invite with specified launch parameters.\n");
+						return;
+                    }
+                      
+                    m_gForm!.m_gConsole!.Print("Invite sent with specified launch parameters.\n");
+					return;
 				}
 			}
 			m_gForm!.m_gConsole!.Print("Failed to find friend, ensure you have them added, and you're supplying the correct name.\n");
 		}
 	}
 
-	public struct RpData
-	{
-		public string details, state, largeImage, smallImage;
-		public DateTime timestamp;
-	}
-
+	// the discord rich presence class, named as we do poorpresence.
 	public class DiscordPoorPresence
 	{
+		// our private global variables for access througout the code
 		private MainForm? m_gForm = default;
-		private DiscordRpcClient? client = default;
+		private DiscordRpcClient? m_gClient = default;
 
+		public RichPresence? rp = default;
+
+		private static bool isTimestampActive = false;
+
+		// init the class with a ptr to the mainform instance
 		public DiscordPoorPresence(MainForm form) { m_gForm = form; }
 
+		// initializing the discord rich presence, I pretty much followed the instructions on the github page.
+		// I did make some changes though.
 		public bool Initialize(string appID)
 		{
-			if (client != null)
-				client.Deinitialize();
+			// if the client isn't null, we'll deinitialize the previous instance
+			if (m_gClient != null)
+				m_gClient.Deinitialize();
 
 			// no need for sanity check as it's done in the init button
-			client = new DiscordRpcClient(appID);
+			m_gClient = new DiscordRpcClient(appID);
 
-			client.OnReady += (sender, e) =>
+			// the events we subscribe to, and print to our console so we know everything's working fine
+			m_gClient.OnReady += (sender, e) =>
 			{
 				m_gForm!.m_gConsole!.Print(string.Format("Received Ready from user {0}\n", e.User.Username));
 			};
 
-			client.OnPresenceUpdate += (sender, e) =>
+			m_gClient.OnPresenceUpdate += (sender, e) =>
 			{
 				m_gForm!.m_gConsole!.Print(string.Format("Received Update! {0}\n", e.Presence));
 			};
 
-			return client.Initialize();
+			// and return the bool whether the client has initalized or not :)
+			return m_gClient.Initialize();
 		}
 
-		public void SetDiscordPoorPresence(RpData data)
+		// setting the presence, we pass a class into here and set the global richpresence class to the input class
+		// then call setpresence
+		public void SetPresence(RichPresence data)
 		{
-			var rp = new RichPresence()
-			{
-				Details = data.details,
-				State = data.state,
-				Assets = new Assets()
-				{
-					LargeImageKey = data.largeImage,
-					//LargeImageText = "STEAMWORKS",
-					SmallImageKey = data.smallImage
-				},
-				Timestamps = new Timestamps()
-				{
-					Start = data.timestamp
-					//End = 
-				}
-
-			};
-
-			//client.ClearPresence();
-			client!.SetPresence(rp);
+			rp = data;
+			m_gClient!.SetPresence(data);
 		}
 
+		// silly function and basically pointless, it's just a dumb toggle to turn on the local time timestamp 
+		public void ToggleTimestamp()
+		{
+			isTimestampActive = !isTimestampActive;
 
+			if (!isTimestampActive)
+			{
+				rp!.Timestamps = new Timestamps();
+				m_gClient!.SetPresence(rp);
+				return;
+			}
+
+			rp!.Timestamps.Start = (DateTime.UtcNow.Subtract(new TimeSpan(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second)));
+			m_gClient!.SetPresence(rp);
+		}
+
+		// unused, idk what it exactly does tbh, didnt read up
 		public void InvokeClient()
 		{
-			Util.Loop(() => client!.Invoke(), 150);
+			Util.Loop(() => m_gClient!.Invoke(), 150);
 		}
 	}
 

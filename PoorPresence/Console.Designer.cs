@@ -28,44 +28,45 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Console));
-			this.MainConsole = new System.Windows.Forms.RichTextBox();
-			this.xD = new System.Windows.Forms.GroupBox();
-			this.xD.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// MainConsole
-			// 
-			this.MainConsole.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.MainConsole.Location = new System.Drawing.Point(8, 16);
-			this.MainConsole.Name = "MainConsole";
-			this.MainConsole.Size = new System.Drawing.Size(620, 336);
-			this.MainConsole.TabIndex = 0;
-			this.MainConsole.Text = "";
-			// 
-			// xD
-			// 
-			this.xD.Controls.Add(this.MainConsole);
-			this.xD.Location = new System.Drawing.Point(4, 0);
-			this.xD.Name = "xD";
-			this.xD.Size = new System.Drawing.Size(636, 360);
-			this.xD.TabIndex = 1;
-			this.xD.TabStop = false;
-			this.xD.Text = "Output";
-			// 
-			// Console
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(642, 362);
-			this.ControlBox = false;
-			this.Controls.Add(this.xD);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "Console";
-			this.Text = "Console";
-			this.xD.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.MainConsole = new System.Windows.Forms.RichTextBox();
+            this.xD = new System.Windows.Forms.GroupBox();
+            this.xD.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MainConsole
+            // 
+            this.MainConsole.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MainConsole.Location = new System.Drawing.Point(9, 18);
+            this.MainConsole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MainConsole.Name = "MainConsole";
+            this.MainConsole.Size = new System.Drawing.Size(723, 388);
+            this.MainConsole.TabIndex = 0;
+            this.MainConsole.Text = "";
+            // 
+            // xD
+            // 
+            this.xD.Controls.Add(this.MainConsole);
+            this.xD.Location = new System.Drawing.Point(5, 0);
+            this.xD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.xD.Name = "xD";
+            this.xD.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.xD.Size = new System.Drawing.Size(742, 415);
+            this.xD.TabIndex = 1;
+            this.xD.TabStop = false;
+            this.xD.Text = "Output";
+            // 
+            // Console
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(749, 418);
+            this.Controls.Add(this.xD);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Console";
+            this.Text = "Console";
+            this.xD.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 
