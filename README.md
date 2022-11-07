@@ -7,7 +7,7 @@ For discord, you can set the details, state, large & small image along with a ti
 
 Since it's no longer solely based around steamworks, I've decided to rename it.
 
-add it to your cheat, or whatever, idc. easily replicatable, would be funny seeing custom discord rich presence for a cheat.
+add it to your cheat, or whatever, idc. easily replicatable in other languages, would be funny seeing custom discord rich presence for a cheat.
 
 using [Lachee's Discord Rich Presence](https://github.com/Lachee/discord-rpc-csharp) to do all the management of that shit
 `NuGet\Install-Package DiscordRichPresence`
